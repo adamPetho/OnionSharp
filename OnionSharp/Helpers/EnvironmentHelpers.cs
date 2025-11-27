@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Net;
+using System.Runtime.InteropServices;
+using NBitcoin;
 
 namespace OnionSharp.Helpers
 {
@@ -40,6 +42,6 @@ namespace OnionSharp.Helpers
 
             Directory.CreateDirectory(directory);
             return directory;
-        }
+        }  
     }
 }
