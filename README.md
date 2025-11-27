@@ -26,13 +26,10 @@ var torSetting = new TorSettings(dataDir,
 			socksPort: 37155,
 			controlPort: 37156);
 
-services.AddSingleton(torSetting);
+// Create and start TorProcessManager which will start tor.exe
+TorProcessManager torProcessManager = new TorProcessManager(torSetting);
+await torProcessManager.StartAsync(attempts: 3, CancellationToken.None);
 
-// Register your HttpClientFactory and use it across your app
-services.AddSingleton<IHttpClientFactory>(s => new OnionHttpClientFactory(torSetting.SocksEndpoint.ToUri("socks5")));
-
-
-// OR in a simple console app, you can:
 // Create the OnionHttpFactory
 var onionClientFactory = new OnionHttpClientFactory(torSetting.SocksEndpoint.ToUri("socks5"));
 

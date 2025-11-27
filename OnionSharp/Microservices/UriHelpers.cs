@@ -2,7 +2,7 @@
 using NBitcoin;
 
 
-namespace OnionSharp.Helpers
+namespace OnionSharp.Microservices
 {
     public static class UriHelpers
     {
