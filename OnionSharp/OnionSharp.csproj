@@ -30,9 +30,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-	  <Content Include="Microservices\Binaries\**\*"
-		  Pack="true"
-		  PackagePath="contentFiles/any/any/Microservices/Binaries/" />
+	  <Content Include="Microservices\Binaries\**\*" Pack="true" PackagePath="contentFiles/any/any/Microservices/Binaries/" />
   </ItemGroup>
 
   <ItemGroup>
