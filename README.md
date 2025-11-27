@@ -40,5 +40,5 @@ var onionClientFactory = new OnionHttpClientFactory(torSetting.SocksEndpoint.ToU
 var myHttpClient = onionClientFactory.CreateClient("name-of-your-client");
 
 // Send requests to onion address (for example)
-await blockstreamClient.GetAsync("http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/api/mempool/recent");
+await myHttpClient.GetAsync("http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/api/mempool/recent");
 ```
