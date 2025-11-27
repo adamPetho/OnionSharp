@@ -9,7 +9,7 @@
     <Title>OnionSharp</Title>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	<AssemblyVersion>1.0.2</AssemblyVersion>
+	<AssemblyVersion>1.0.3</AssemblyVersion>
 	<FileVersion>$(AssemblyVersion)</FileVersion>
 	<Version>$(AssemblyVersion)</Version>
 	<Authors>AP</Authors>
@@ -30,7 +30,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-	  <None Include="Microservices\Binaries\**\*.*"
+	  <None Include="Microservices\Binaries\**\*"
 		  Pack="true"
 		  PackagePath="Microservices/Binaries/" />
   </ItemGroup>
@@ -43,15 +43,12 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<None Update="Microservices\Binaries\win64\Tor\**\*">
+		<!-- Ensure MSBuild tells NuGet these files should be copied to output -->
+		<Content Update="Microservices\Binaries\**\*">
+			<CopyToOutput>true</CopyToOutput>
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-		<None Update="Microservices\Binaries\lin64\Tor\**\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-		<None Update="Microservices\Binaries\osx64\Tor\**\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</Content>
 	</ItemGroup>
 
 </Project>
