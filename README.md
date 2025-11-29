@@ -39,3 +39,7 @@ var myHttpClient = onionClientFactory.CreateClient("name-of-your-client");
 // Send requests to onion address (for example)
 await myHttpClient.GetAsync("http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion/api/mempool/recent");
 ```
+
+# Don't trust, verify!
+The nuget package contains a built-in tor.exe (v13.5.9). In case you don't trust it, you can replace it with a tor.exe you get by yourself.
+Download (tor.exe)[https://www.torproject.org/download/tor/] from the official site and replace the executable with your new one.
